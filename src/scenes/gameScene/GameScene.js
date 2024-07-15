@@ -70,7 +70,7 @@ export class GameScene extends Phaser.Scene {
             ).setOrigin(0.5,0.5);
 
         this.score = this.add.text(
-            1000,
+            990,
             50,
             this.#score.toString(),
             {
@@ -100,6 +100,9 @@ export class GameScene extends Phaser.Scene {
 
     begin(){
         this.#score = 0;
+        this.score.setText(this.#score.toString());
+        this.#seconds = 30;
+        this.timer.setText(this.#seconds.toString());
         this.#startButton.setVisible(false);
         this.showButtons(true);
         this.#timerRunning = true;
@@ -108,6 +111,7 @@ export class GameScene extends Phaser.Scene {
 
     getNextQuestion(){
         this.#currentQuestion +=1;
+        this.score.setText(this.#score.toString());
         let z = Phaser.Math.RND.integerInRange(0,6);
         if (z == this.#currentAnswer){
             z +=1;
@@ -116,7 +120,6 @@ export class GameScene extends Phaser.Scene {
             }
         }
         this.#currentAnswer = z;
-        console.log(this.#currentAnswer);
         this.readQuestion(); 
     }
 
