@@ -161,13 +161,13 @@ export class GameScene extends Phaser.Scene {
          this.antartica_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 1)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
          });
@@ -187,13 +187,13 @@ export class GameScene extends Phaser.Scene {
          this.australia_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 3)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
          });
@@ -212,13 +212,13 @@ export class GameScene extends Phaser.Scene {
          this.africa_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 0)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
          });
@@ -237,13 +237,13 @@ export class GameScene extends Phaser.Scene {
          this.asia_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 2)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
          });
@@ -262,13 +262,13 @@ export class GameScene extends Phaser.Scene {
         this.europe_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 4)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
         });
@@ -287,13 +287,13 @@ export class GameScene extends Phaser.Scene {
         this.s_america_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 6)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score+=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
         });
@@ -312,13 +312,13 @@ export class GameScene extends Phaser.Scene {
         this.n_america_button.on('pointerdown', () =>{
             if (this.#currentAnswer == 5)
                 {
-                    this.ding = this.sound.add('ding');
+                    this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
                     this.#score +=1;
                     this.getNextQuestion();
 
                 } else {
-                    this.buzz = this.sound.add('buzz');
+                    this.buzz = this.sound.add('buzz',{volume: 0.2});
                     this.buzz.play();
                 }
         });
