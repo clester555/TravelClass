@@ -16,7 +16,17 @@ export class GameScene extends Phaser.Scene {
                         'australiaSound',
                         'europeSound',
                         'northAmericaSound',
-                        'southAmericaSound'
+                        'southAmericaSound',
+                        'america',
+                        'argentina',
+                        'theUK',
+                        'egypt',
+                        'kangaroos',
+                        'indonesia',
+                        'coldest',
+                        'biggest',
+                        'chocalate',
+                        'giraffes'
                     ];
 
 
@@ -46,6 +56,22 @@ export class GameScene extends Phaser.Scene {
         this.load.audio('europeSound','assets/sounds/europe.mp3');
         this.load.audio('northAmericaSound','assets/sounds/north_america.mp3'); 
         this.load.audio('southAmericaSound','assets/sounds/south_america.mp3');
+
+
+        this.load.audio('america','assets/sounds/america.mp3');
+        this.load.audio('theUK','assets/sounds/UK.mp3');
+        this.load.audio('egypt','assets/sounds/egypt.mp3');
+        this.load.audio('indonesia','assets/sounds/indonesia.mp3');
+        this.load.audio('argentina','assets/sounds/argentina.mp3');
+
+        this.load.audio('kangaroos','assets/sounds/kangaroos.mp3');
+        this.load.audio('giraffes','assets/sounds/giraffes.mp3');
+        this.load.audio('chocalate','assets/sounds/chocolate.mp3');
+        this.load.audio('pyramids','assets/sounds/pyramids.mp3');
+        this.load.audio('pumpkins','assets/sounds/pumpkins.mp3');
+        this.load.audio('greatWall','assets/sounds/greatWall.mp3');
+        this.load.audio('coldest','assets/sounds/coldest.mp3');
+        this.load.audio('biggest','assets/sounds/biggest.mp3');
 
 
         this.load.audio('buzz','assets/sounds/buzz.wav');
@@ -113,9 +139,13 @@ export class GameScene extends Phaser.Scene {
         this.#currentQuestion +=1;
         this.score.setText(this.#score.toString());
         let z = Phaser.Math.RND.integerInRange(0,6);
+        if (this.#score>9){
+            z = Phaser.Math.RND.integerInRange(7,16);
+        } 
+      
         if (z == this.#currentAnswer){
             z +=1;
-            if (z>6){
+            if (z>16){
                 z=0;
             }
         }
@@ -159,7 +189,7 @@ export class GameScene extends Phaser.Scene {
              this.map.setTexture('worldMap');
          }); 
          this.antartica_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 1)
+            if (this.#currentAnswer == 1 || this.#currentAnswer == 13)
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -185,7 +215,7 @@ export class GameScene extends Phaser.Scene {
              this.map.setTexture('worldMap');
          }); 
          this.australia_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 3)
+            if (this.#currentAnswer == 3 || this.#currentAnswer == 11)
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -210,7 +240,7 @@ export class GameScene extends Phaser.Scene {
              this.map.setTexture('worldMap');
          }); 
          this.africa_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 0)
+            if ((this.#currentAnswer == 0 || this.#currentAnswer == 10)||(this.#currentAnswer == 16))
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -235,7 +265,7 @@ export class GameScene extends Phaser.Scene {
              this.map.setTexture('worldMap');
          }); 
          this.asia_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 2)
+            if ((this.#currentAnswer == 2 || this.#currentAnswer == 12)|| (this.#currentAnswer == 14))
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -260,7 +290,7 @@ export class GameScene extends Phaser.Scene {
             this.map.setTexture('worldMap');
         }); 
         this.europe_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 4)
+            if ( this.#currentAnswer == 4 || this.#currentAnswer == 9)
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -285,7 +315,7 @@ export class GameScene extends Phaser.Scene {
             this.map.setTexture('worldMap');
         }); 
         this.s_america_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 6)
+            if ((this.#currentAnswer == 6 || this.#currentAnswer == 8)||(this.#currentAnswer == 15))
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
@@ -310,7 +340,7 @@ export class GameScene extends Phaser.Scene {
             this.map.setTexture('worldMap');
         }); 
         this.n_america_button.on('pointerdown', () =>{
-            if (this.#currentAnswer == 5)
+            if (this.#currentAnswer == 5 || this.#currentAnswer == 7)
                 {
                     this.ding = this.sound.add('ding',{volume: 0.2});
                     this.ding.play();
